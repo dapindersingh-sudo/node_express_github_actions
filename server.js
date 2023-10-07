@@ -9,9 +9,31 @@ app.use(express.json()) // for parsing application/json
 app.use(express.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
 
 
-//http://localhost:3000/
+
 app.get('/', function (req, res) {
+ /* res.send("<a href='/home'>Home Page</a>")
+  res.send("<a href='/name'>Student Detail</a>")
+  res.send("<a href='/res'>JSON DATA</a>")*/
+  res.sendFile(__dirname + '/index.html');
+})
+
+
+//http://localhost:3000/home
+app.get('/home', function (req, res) {
     res.send("<h1>Home Page</h1>")
+})
+
+//http://localhost:3000/name
+app.get('/name', function (req, res) {
+  res.send("<h1>C0880593  Dapinder Singh</h1>")
+})
+
+//http://localhost:3000/res
+app.get("/res", function(req,res){
+  res.json({name:'Dapinder Singh',
+  id:'C0880593',
+  Course:'FSDT'
+})
 })
 
 //http://localhost:3000/profile
