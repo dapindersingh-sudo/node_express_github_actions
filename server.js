@@ -37,7 +37,7 @@ app.get("/res", function(req,res){
 })
 
 //http://localhost:3000/profile
-app.post('/profile', (req, res) => {
+app.get('/profile', (req, res) => {
   console.log(req.body)
   res.json(req.body)
 })
